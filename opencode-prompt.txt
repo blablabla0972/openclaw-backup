@@ -1,0 +1,88 @@
+# OpenCode Prompt for Complete OpenClaw Setup
+
+Copy and paste this ENTIRE prompt into OpenCode/Codex:
+
+---
+
+/setup-openclaw --auto --from-backup --github-repo YOUR_USERNAME/openclaw-backup
+
+## Instructions
+
+1. Check if OpenClaw is installed:
+   - If NOT installed: Install with `npm install -g openclaw`
+   - If installed: Update to latest version
+
+2. Clone backup repository:
+   - Repository: https://github.com/YOUR_USERNAME/openclaw-backup
+   - Clone to: ~/.openclaw/workspace/openclaw-backup
+
+3. Restore from backup:
+   - Run: ./restore-openclaw.sh
+   - Restore ALL components:
+     ✓ Configuration (openclaw.json)
+     ✓ Credentials (encrypted)
+     ✓ Skills (all custom skills)
+     ✓ Workspace (all project files)
+     ✓ Memory (daily + long-term)
+     ✓ Cron jobs
+
+4. Validate installation:
+   - Check OpenClaw gateway status
+   - Verify workspace files exist
+   - Test one skill execution
+
+5. Setup auto-backup:
+   - Install cron job for daily backup at 3 AM
+   - Configure git auto-commit for backups
+
+6. Report status:
+   - Show what was restored
+   - List any errors or warnings
+   - Provide next steps
+
+## Expected Output
+
+```
+✅ OpenClaw Setup Complete!
+
+Restored:
+  ✓ Configuration
+  ✓ Credentials
+  ✓ Skills (X skills)
+  ✓ Workspace (X files)
+  ✓ Memory (X files)
+  ✓ Cron jobs
+
+Gateway Status: Running
+Next: Start using OpenClaw!
+```
+
+## If Errors Occur
+
+- Log all errors to: ~/.openclaw/setup-errors.log
+- Continue with remaining steps
+- Provide troubleshooting guide at end
+
+---
+
+## Alternative Prompts
+
+### Quick Setup (No Backup)
+```
+/setup-openclaw --fresh --skip-backup
+```
+
+### Restore Only
+```
+/restore-openclaw --from-backup ~/.openclaw/workspace/openclaw-backup
+```
+
+### Backup Only
+```
+/backup-openclaw --to-github --repo YOUR_USERNAME/openclaw-backup
+```
+
+### Full System Migration
+```
+/migrate-openclaw --from OLD_MACHINE --to NEW_MACHINE --via github
+```

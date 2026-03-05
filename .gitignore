@@ -1,0 +1,35 @@
+# Ignore sensitive files
+*.env
+*.env.gpg
+credentials/
+*.key
+*.secret
+
+# Ignore large directories
+node_modules/
+camoufox-env/
+*.log
+logs/
+
+# Ignore backup archives (keep in git history only)
+*.tar.gz
+openclaw-backup-*.tar.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Keep backup directory structure but ignore contents
+backup/
+!backup/.gitkeep
